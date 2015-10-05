@@ -23,7 +23,7 @@ public final class ResonantCraft extends AbstractMod
     public static ResonantCraft instance;
 
     @SidedProxy(serverSide = "com.builtbroken.rc.common.proxy.CommonProxy", clientSide = "com.builtbroken.rc.common.proxy.ClientProxy")
-    protected CommonProxy proxy;
+    public static CommonProxy proxy;
 
     public ResonantCraft()
     {
