@@ -8,6 +8,7 @@ import com.builtbroken.rc.common.libraries.Reference;
 import com.builtbroken.rc.common.proxy.CommonProxy;
 
 import cpw.mods.fml.common.Mod;
+import cpw.mods.fml.common.SidedProxy;
 import cpw.mods.fml.common.event.FMLInitializationEvent;
 import cpw.mods.fml.common.event.FMLPostInitializationEvent;
 import cpw.mods.fml.common.event.FMLPreInitializationEvent;
@@ -18,6 +19,10 @@ import cpw.mods.fml.common.event.FMLPreInitializationEvent;
 @Mod(modid = Reference.DOMAIN, name = Reference.NAME, version = Reference.VERSION, dependencies = "required-after:VoltzEngine")
 public final class ResonantCraft extends AbstractMod
 {
+    @Mod.Instance(Reference.DOMAIN)
+    public static ResonantCraft instance;
+
+    @SidedProxy(serverSide = "com.builtbroken.rc.common.proxy.CommonProxy", clientSide = "com.builtbroken.rc.common.proxy.ClientProxy")
     protected CommonProxy proxy;
 
     public ResonantCraft()
@@ -34,6 +39,7 @@ public final class ResonantCraft extends AbstractMod
     @Mod.EventHandler
     public void preInit(FMLPreInitializationEvent event)
     {
+        Engine.instance.logger().info("Hello Minecraft! Beginning PreInitialization.");
         Engine.requestOres();
         Engine.requestResources();
         ObjectManager.registerAll();
