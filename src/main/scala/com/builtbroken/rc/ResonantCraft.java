@@ -16,18 +16,18 @@ import cpw.mods.fml.common.event.FMLPreInitializationEvent;
 /**
  * @author - Kolatra
  */
-@Mod(modid = Reference.DOMAIN, name = Reference.NAME, version = Reference.VERSION, dependencies = "required-after:VoltzEngine")
+@Mod(modid = Reference.ID, name = Reference.NAME, version = Reference.VERSION, dependencies = "required-after:VoltzEngine")
 public final class ResonantCraft extends AbstractMod
 {
-    @Mod.Instance(Reference.DOMAIN)
+    @Mod.Instance(Reference.ID)
     public static ResonantCraft instance;
 
-    @SidedProxy(serverSide = "com.builtbroken.rc.common.proxy.CommonProxy", clientSide = "com.builtbroken.rc.common.proxy.ClientProxy")
+    @SidedProxy(serverSide = "com.builtbroken.rc.common.proxy.ServerProxy", clientSide = "com.builtbroken.rc.common.proxy.ClientProxy")
     public static CommonProxy proxy;
 
     public ResonantCraft()
     {
-        super(Reference.DOMAIN, "ResonantCraft");
+        super(Reference.ID, "ResonantCraft");
     }
 
     @Override
@@ -40,6 +40,7 @@ public final class ResonantCraft extends AbstractMod
     public void preInit(FMLPreInitializationEvent event)
     {
         Engine.instance.logger().info("Hello Minecraft! Beginning PreInitialization.");
+        Engine.requestMultiBlock();
         Engine.requestOres();
         Engine.requestResources();
         ObjectManager.registerAll();

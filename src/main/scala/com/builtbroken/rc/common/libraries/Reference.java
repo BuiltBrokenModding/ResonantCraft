@@ -5,6 +5,7 @@ package com.builtbroken.rc.common.libraries;
  */
 public final class Reference
 {
+    public static final String ID = "ResonantCraft";
     public static final String DOMAIN = "resonantcraft";
     public static final String NAME = "ResonantCraft";
     public static final String PREFIX = DOMAIN + ":";
