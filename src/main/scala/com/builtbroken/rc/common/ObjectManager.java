@@ -15,6 +15,12 @@ public class ObjectManager
     {
         registerBlocks();
         registerItems();
+        recipes();
+    }
+
+    private static void recipes()
+    {
+
     }
 
     private static void registerBlocks()
