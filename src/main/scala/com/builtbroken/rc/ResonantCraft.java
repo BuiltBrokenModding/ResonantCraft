@@ -41,6 +41,7 @@ public final class ResonantCraft extends AbstractMod
     {
         Engine.instance.logger().info("Hello Minecraft! Beginning PreInitialization.");
         Engine.requestMultiBlock();
+        Engine.requestGemOres();
         Engine.requestOres();
         Engine.requestResources();
         ObjectManager.registerAll();
