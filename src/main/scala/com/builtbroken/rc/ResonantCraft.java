@@ -3,6 +3,7 @@ package com.builtbroken.rc;
 import com.builtbroken.mc.core.Engine;
 import com.builtbroken.mc.lib.mod.AbstractMod;
 import com.builtbroken.mc.lib.mod.AbstractProxy;
+import com.builtbroken.rc.common.ObjectManager;
 import com.builtbroken.rc.common.libraries.Reference;
 import com.builtbroken.rc.common.proxy.CommonProxy;
 
@@ -14,7 +15,7 @@ import cpw.mods.fml.common.event.FMLPreInitializationEvent;
 /**
  * @author - Kolatra
  */
-@Mod(modid = Reference.DOMAIN, version = Reference.VERSION)
+@Mod(modid = Reference.DOMAIN, name = Reference.NAME, version = Reference.VERSION, dependencies = "required-after:VoltzEngine")
 public final class ResonantCraft extends AbstractMod
 {
     protected CommonProxy proxy;
@@ -35,6 +36,7 @@ public final class ResonantCraft extends AbstractMod
     {
         Engine.requestOres();
         Engine.requestResources();
+        ObjectManager.registerAll();
     }
 
     @Mod.EventHandler
