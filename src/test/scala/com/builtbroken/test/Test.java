@@ -6,7 +6,7 @@ import org.junit.runner.RunWith;
 /**
  * @author - Kolatra
  */
-@RunWith(VoltzTestRunner.class)
+//@RunWith(VoltzTestRunner.class)
 public class Test
 {
 
