@@ -39,9 +39,10 @@ println "Current Java version = " + currentJvm
 javadoc.dependsOn(sourceMainJava)
 javadoc.dependsOn(sourceMainScala)
 
-minecraft {
-	replace "@VERSION@", project.version
+minecraft {    
+    replace "required-after:VoltzEngine", "required-after:VoltzEngine" + voltz_engine_version
 }
+
 
 processResources {
     // this will ensure that this task is redone when the versions change.
@@ -80,6 +81,12 @@ lombok {
     // optional: values below are the defaults
     version = "1.16.4"
     sha256 = "3ca225ce3917eac8bf4b7d2186845df4e70dcdede356dca8537b6d78a535c91e"
+}
+
+
+dependencies 
+{
+    compile "dev.builtbroken.voltzengine:VoltzEngine:1.7.10-0.6.2+:deobf-dev"
 }
 
 //configure([compileJava, compileTestJava]) {
