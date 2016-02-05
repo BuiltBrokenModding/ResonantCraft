@@ -5,7 +5,6 @@ import com.builtbroken.mc.lib.mod.AbstractProxy;
 /**
  * @author - Kolatra
  */
-public class CommonProxy extends AbstractProxy
-{
+public class CommonProxy extends AbstractProxy {
 
 }

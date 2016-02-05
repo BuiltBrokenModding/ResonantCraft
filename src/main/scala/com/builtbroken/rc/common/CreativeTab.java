@@ -7,16 +7,13 @@ import net.minecraft.item.Item;
 /**
  * @author - Kolatra
  */
-public class CreativeTab extends ModCreativeTab
-{
-    public CreativeTab(String name, Item item)
-    {
+public class CreativeTab extends ModCreativeTab {
+    public CreativeTab(String name, Item item) {
         super(name, item);
     }
 
     @Override
-    public Item getTabIconItem()
-    {
+    public Item getTabIconItem() {
         return ObjectManager.cutter;
     }
 }
